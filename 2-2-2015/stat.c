@@ -12,6 +12,7 @@ int main(int argc,char **argv)
 		return 0;
 	}
 	stat(argv[1],&buf);
+	//for detection of symobloic files lstat  
 	if(S_ISREG(buf.st_mode))
 		printf("REGULAR FILE \n");
 	if(S_ISDIR(buf.st_mode))
@@ -20,5 +21,11 @@ int main(int argc,char **argv)
 		printf("charecter file\n");		// ./a.out /dev/tty1
 	if(S_ISBLK(buf.st_mode))
 		printf("block device file\n"); // ./a.out /dev/sda1
+	if(S_ISFIFO(buf.st_mode))
+		printf("FIFO File\n"); //  mkfifo xyz
+	if(S_ISSOCK(buf.st_mode))
+		printf("Socket File\n"); // ./a.out /dev/log 
+	
+	
 	return 0;
 }
