@@ -34,7 +34,7 @@ int main()
 	else
 	{
 		signal(SIGALRM,sighandler1);
-		printf("parent process parent %d\n",getpid()); //id of loginshell
+		printf("parent process parent %d\n",getpid());
 		signal(SIGINT,sighandler2);
 		//alarm(3);
 		//wait(&status);

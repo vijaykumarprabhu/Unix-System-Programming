@@ -5,7 +5,6 @@
 void sighandler(int);
 int main()
 {
-	signal(SIGALRM,sighandler);
 	//signal(SIGALRM,SIG_DFL);
 	//signal(SIGALRM,SIG_IGN);
 	alarm(2);
